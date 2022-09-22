@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -43,7 +44,8 @@ import { DemarcheComponent } from './layout/demarche/demarche.component';
     MdbRippleModule,
     MdbFormsModule,
     MdbCarouselModule,
-    MatGridListModule
+    MatGridListModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

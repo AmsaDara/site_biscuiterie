@@ -13,15 +13,15 @@
             ACCUEIL
           </a>
           <a href="#" mat-button routerLink="municipalite">
-            <mat-icon>home</mat-icon>
+            <mat-icon>table_chart</mat-icon>
              MUNICIPALITE
           </a>
           <a href="#" mat-button routerLink="activites">
-            <mat-icon>home</mat-icon>
+            <mat-icon>work</mat-icon>
             ACTIVITES
           </a>
           <a href="#" mat-button routerLink="demarche">
-            <mat-icon>home</mat-icon>
+            <mat-icon>local_library</mat-icon>
             DEMARCHES
           </a>
         </div>
@@ -38,24 +38,24 @@
         </form>
       </mat-toolbar-row>
     </mat-toolbar>
-    <div>
+    <div style="height: auto;">
       <mat-sidenav-container fxFlexFill>
         <mat-sidenav #sidenav style="background-color: #1F758E;">
           <mat-nav-list>
-            <a href="#" mat-list-item>
+            <a href="#" mat-list-item routerLink="home">
               <mat-icon>home</mat-icon>
               ACCUEIL
             </a>
-            <a href="#" mat-list-item>
-              <mat-icon>home</mat-icon>
+            <a href="#" mat-list-item routerLink="municipalite">
+              <mat-icon>table_chart</mat-icon>
               MUNICIPALITES
             </a>
-            <a href="#" mat-list-item>
-              <mat-icon>home</mat-icon>
+            <a href="#" mat-list-item routerLink="activites">
+              <mat-icon>work</mat-icon>
               ACTIVITES
             </a>
-            <a href="#" mat-list-item>
-              <mat-icon>home</mat-icon>
+            <a href="#" mat-list-item routerLink="demarche">
+              <mat-icon>local_library</mat-icon>
               DEMARCHES
             </a>
             <a (click)="sidenav.toggle()" mat-list-item>
@@ -63,51 +63,51 @@
             </a>
           </mat-nav-list>
         </mat-sidenav>
+        <!-- Début caroussel-->
+        <mdb-carousel [controls]="true" [indicators]="true" [dark]="true">
+          <mdb-carousel-item>
+            <img
+              src="../../../assets/images/commune_de_biscuiterie.png"
+              class="d-block w-100"
+              alt="..."
+              style="max-height:500px; margin:0 auto;"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img
+              src="../../../assets/images/maire.jpg"
+              class="d-block w-100"
+              alt="..."
+              style="max-height:500px; margin:0 auto;"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img
+              src="../../../assets/images/image1.jpg"
+              class="d-block w-100"
+              alt="..."
+              style="max-height:500px; margin:0 auto;"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </mdb-carousel-item>
+        </mdb-carousel>
+        <!-- Fin caroussel -->
         <!-- <mat-sidenav-content fxFlexFill>Commune De Biscuiterie</mat-sidenav-content> -->
       </mat-sidenav-container>
     </div>
   </div>
   
-  <!-- Début caroussel-->
-  <mdb-carousel [controls]="true" [indicators]="true" [dark]="true">
-    <mdb-carousel-item>
-      <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(19).webp"
-        class="d-block w-100"
-        alt="..."
-        style="max-height:400px; margin:0 auto;"
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).webp"
-        class="d-block w-100"
-        alt="..."
-        style="max-height:400px; margin:0 auto;"
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(40).webp"
-        class="d-block w-100"
-        alt="..."
-        style="max-height:400px; margin:0 auto;"
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </mdb-carousel-item>
-  </mdb-carousel>
-  <!-- Fin caroussel -->
   
   <ng-content select="div"></ng-content>
   

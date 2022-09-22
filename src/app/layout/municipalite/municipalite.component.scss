@@ -1,0 +1,35 @@
+.container h1{
+    font-size: 4em;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container h2{  
+  font-size: 2.5em;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 100;
+  color: #1F758E;
+  border: 2px solid white;
+}
+
+.container-fluid h1{
+    font-size: 4em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+
+    font-stretch: normal;
+   
+    line-height: normal;
+  
+}
+.btn{
+    background-color: #1F758E;
+    color: white;
+}
+.button{
+    background-color: white;
+    color: #1F758E;
+}
