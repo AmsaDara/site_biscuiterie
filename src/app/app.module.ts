@@ -21,6 +21,17 @@ import { HomeComponent } from './layout/home/home.component';
 import { MunicipaliteComponent } from './layout/municipalite/municipalite.component';
 import { ActivitesComponent } from './layout/activites/activites.component';
 import { DemarcheComponent } from './layout/demarche/demarche.component';
+import { HistoricComponent } from './layout/historic/historic.component';
+import { SeemoreComponent } from './layout/municipalite/seemore/seemore.component';
+import { EducationComponent } from './layout/activites/education/education.component';
+import { SportsComponent } from './layout/activites/sports/sports.component';
+import { CultureComponent } from './layout/activites/culture/culture.component';
+import { SanteComponent } from './layout/activites/sante/sante.component';
+import { SocialComponent } from './layout/activites/social/social.component';
+import { EnvironnementComponent } from './layout/activites/environnement/environnement.component';
+import { ReabitationComponent } from './layout/activites/grandprojet/reabitation/reabitation.component';
+import { SansableComponent } from './layout/activites/grandprojet/sansable/sansable.component';
+import { TerrainComponent } from './layout/activites/grandprojet/terrain/terrain.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +40,18 @@ import { DemarcheComponent } from './layout/demarche/demarche.component';
     HomeComponent,
     MunicipaliteComponent,
     ActivitesComponent,
-    DemarcheComponent
+    DemarcheComponent,
+    HistoricComponent,
+    SeemoreComponent,
+    EducationComponent,
+    SportsComponent,
+    CultureComponent,
+    SanteComponent,
+    SocialComponent,
+    EnvironnementComponent,
+    ReabitationComponent,
+    SansableComponent,
+    TerrainComponent
   ],
   imports: [
     AppRoutingModule,

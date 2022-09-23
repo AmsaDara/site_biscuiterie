@@ -1,0 +1,36 @@
+h2{
+  font-size: 2.5em;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 100;
+  color: white;
+  border: 2px solid white;
+  text-align: center;
+}
+h5{
+    color: black;
+}
+
+.container-fluid{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.content-text{
+    width: 60%;
+    //border: 2px solid #1F758E;
+}
+.content-image{
+    width: 35%;
+    flex:  1 1 50px;
+}
+.content-image img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}

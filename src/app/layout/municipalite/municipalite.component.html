@@ -25,7 +25,7 @@
                   vero animi voluptates esse consectetur, assumenda rerum,
                   cum ut tempore omnis nisi mollitia eaque?
                 </p>
-                <a href="#" class="btn">Voir +</a>
+                <a class="btn" routerLink="/biographie">Voir +</a>
                 <!-- <p class="card-text waaw">
                       <small class="text-muted">Last updated 3 mins ago</small>
                     </p> -->
@@ -34,7 +34,7 @@
           </div>
         </div>
     </div>
-    <div class="container-fluid text-center text-black mb-4" style="background-color: #1F758E;">
+    <div class="container-fluid text-center text-black mx-auto" style="background-color: #1F758E;">
         <h1>Les Prédecessurs</h1>
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 mx-auto">      
@@ -54,11 +54,11 @@
         </div>
     </div>
     <!--Municipalités -->
-    <div class="container text-center text-black">
+    <div class="container text-center text-black  mx-auto">
         <h2>Municipalité</h2>
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-12 mx-auto">
-            <a href="#" routerLink="activites">
+            <a routerLink="/activites">
               <div class="card shadow-0 mb-3" style="border: 2px solid #1F758E; max-width: 18rem;">
                 <div class="card-header">Le Maire</div>
                 <div class="card-body text-success p-0">
@@ -129,7 +129,8 @@
         </div>
     </div>
     <!--Le conseil Municiapl-->
-    <div class="container-fluid text-center text-black mb-4" style="background-color: #1F758E;">
+    <div class="container-fluid text-center text-black  mx-auto" style="background-color: #1F758E;">
+        <h2 class="m-0 p-0" style="font-size: 2.5em; font-family: 'Times New Roman', Times, serif; font-weight: 100; color: white; border: 2px solid white;">Le Conseil Municipal</h2>
         <div class="row">
             <h2>Le Maire</h2>
             <div class="col-lg-2 col-md-4 col-sm-6 mx-auto">
@@ -251,7 +252,7 @@
     </div>
     
     <!--Cabinet du maire-->
-    <div class="container text-center text-black">
+    <div class="container text-center text-black  mx-auto">
       <h2 class="mt-3">CABINET DU MAIRE</h2>
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12 mx-auto">
@@ -291,7 +292,7 @@
     </div>
     
     <!--Administration Municipal-->
-    <div class="container-fluid text-center text-black mb-4" style="background-color: #1F758E;">
+    <div class="container-fluid text-center text-black mb-4  mx-auto" style="background-color: #1F758E;">
       <h2 class="mt-3 abs">ADMINISTRATION MUNICIPAL</h2>
       <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 mx-auto">
@@ -354,7 +355,5 @@
       </div>
     </div>
     
-   
-    
-    
 </app-nav>
+<router-outlet></router-outlet>
