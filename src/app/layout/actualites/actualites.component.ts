@@ -4,13 +4,13 @@ import { ArticleService } from '../articles.service';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-actualites',
+  templateUrl: './actualites.component.html',
+  styleUrls: ['./actualites.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class ActualitesComponent implements OnInit {
+
   constructor() { }
 
   ngOnInit(): void {

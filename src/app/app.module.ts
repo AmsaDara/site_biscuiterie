@@ -32,6 +32,13 @@ import { EnvironnementComponent } from './layout/activites/environnement/environ
 import { ReabitationComponent } from './layout/activites/grandprojet/reabitation/reabitation.component';
 import { SansableComponent } from './layout/activites/grandprojet/sansable/sansable.component';
 import { TerrainComponent } from './layout/activites/grandprojet/terrain/terrain.component';
+import { ActualitesComponent } from './layout/actualites/actualites.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -51,7 +58,8 @@ import { TerrainComponent } from './layout/activites/grandprojet/terrain/terrain
     EnvironnementComponent,
     ReabitationComponent,
     SansableComponent,
-    TerrainComponent
+    TerrainComponent,
+    ActualitesComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -67,7 +75,13 @@ import { TerrainComponent } from './layout/activites/grandprojet/terrain/terrain
     MdbFormsModule,
     MdbCarouselModule,
     MatGridListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

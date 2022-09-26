@@ -15,11 +15,18 @@ import { EnvironnementComponent } from './layout/activites/environnement/environ
 import { ReabitationComponent } from './layout/activites/grandprojet/reabitation/reabitation.component';
 import { SansableComponent } from './layout/activites/grandprojet/sansable/sansable.component';
 import { TerrainComponent } from './layout/activites/grandprojet/terrain/terrain.component';
+import { ActualitesComponent } from './layout/actualites/actualites.component';
+import { RegisterComponent } from './user/register/register.component';
+import { AuthenticateComponent } from './user/authenticate/authenticate.component';
 const routes: Routes = [
   {
     path:'',
     component:HomeComponent
   },
+  {
+    path:'actualites',
+    component:ActualitesComponent
+},
   {
     path:'municipalite',
     component:MunicipaliteComponent,
@@ -82,6 +89,14 @@ const routes: Routes = [
   {
     path:'historiques',
     component:HistoricComponent
+  },
+  {
+    path:'register',
+    component:RegisterComponent
+  },
+  {
+    path:'signin',
+    component:AuthenticateComponent
   },
   {
     path:'**',

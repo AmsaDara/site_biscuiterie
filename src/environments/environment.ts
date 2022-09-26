@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_API_URI : 'http://localhost:3000',
+  // CLOUDINARY: {
+  //   CLOUD_NAME: 'alfa-computers',
+  //   API_KEY: '284629792882378',
+  //   API_SECRET: 'lRTk5ONZWexPauyAyu8_fjvWCMc',
+  //   API_ENVIRONMENT_VARIABLE: {
+  //     CLOUDINARY_URL: `cloudinary://284629792882378:lRTk5ONZWexPauyAyu8_fjvWCMc@alfa-computers`
+  //   }
+  // }
 };
 
 /*
