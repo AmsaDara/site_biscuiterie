@@ -18,6 +18,12 @@ import { TerrainComponent } from './layout/activites/grandprojet/terrain/terrain
 import { ActualitesComponent } from './layout/actualites/actualites.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AuthenticateComponent } from './user/authenticate/authenticate.component';
+import { AuthGuard } from './gards/auth.guard';
+import { ArticleResolver } from './layout/article.resolver';
+import { ByarticleComponent } from './layout/actualites/byarticle/byarticle.component';
+import { SecremunicipalComponent } from './layout/municipalite/secremunicipal/secremunicipal.component';
+import { CabinetmaireComponent } from './layout/municipalite/cabinetmaire/cabinetmaire.component';
+import { ListeconseilComponent } from './layout/municipalite/listeconseil/listeconseil.component';
 const routes: Routes = [
   {
     path:'',
@@ -25,7 +31,16 @@ const routes: Routes = [
   },
   {
     path:'actualites',
-    component:ActualitesComponent
+    component:ActualitesComponent,
+    canActivate:[AuthGuard]
+},
+{
+  path: 'actualites/:id',
+  component: ByarticleComponent,    
+  canActivate:[AuthGuard],
+  resolve: {
+    actualites: ArticleResolver
+  }
 },
   {
     path:'municipalite',
@@ -41,7 +56,19 @@ const routes: Routes = [
         path:'biographie',
         component:SeemoreComponent
   },
- 
+  {
+    path:'secretairemunicipal',
+    component:SecremunicipalComponent
+  },
+  {
+    path:'cabinetdumaire',
+    component:CabinetmaireComponent
+  },
+  {
+    path:'conseilmunicipal',
+    component:ListeconseilComponent
+  },
+  
   {
     path:'activites',
     component:ActivitesComponent

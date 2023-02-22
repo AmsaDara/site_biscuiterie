@@ -1,1 +1,375 @@
-<p>actualites works!</p>
+<div style="height: auto;">
+    <mat-toolbar style="background-color:#1F758E; color: white;">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Mairie Biscuiterie</span>
+        <span class="example-spacer"></span>
+        <div fxShow="true" fxHide.lt-md="true">
+          <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+          <a  mat-button routerLink="/">
+            <mat-icon> home </mat-icon>
+            ACCUEIL
+          </a>
+          <a  mat-button routerLink="/municipalite">
+            <mat-icon>table_chart</mat-icon>
+             MUNICIPALITE
+          </a>
+          <a  mat-button routerLink="/activites">
+            <mat-icon>work</mat-icon>
+            ACTIVITES
+          </a>
+          <a href="#" mat-button routerLink="/demarche">
+            <mat-icon>local_library</mat-icon>
+            DEMARCHES
+          </a>
+          <!-- <a  mat-button routerLink="/historiques">
+            <mat-icon>style</mat-icon>
+            HISTORIQUES
+          </a> -->
+          <a  mat-button routerLink="/register">
+            <mat-icon>style</mat-icon>
+           S'inscrire
+          </a>
+          <a  mat-button routerLink="/signin">
+            <mat-icon>style</mat-icon>
+            Se Connecter
+          </a>
+        </div>
+        <form class="d-flex input-group w-auto">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Recherche"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-black" type="button">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div style="height: auto;">
+      <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav style="background-color: #1F758E;">
+          <mat-nav-list>
+            <a mat-list-item routerLink="/">
+              <mat-icon>home</mat-icon>
+              ACCUEIL
+            </a>
+            <a mat-list-item routerLink="/municipalite">
+              <mat-icon>table_chart</mat-icon>
+              MUNICIPALITES
+            </a>
+            <a mat-list-item routerLink="/activites">
+              <mat-icon>work</mat-icon>
+              ACTIVITES
+            </a>
+            <a mat-list-item routerLink="/demarche">
+              <mat-icon>local_library</mat-icon>
+              DEMARCHES
+            </a>
+            <a mat-list-item routerLink="/historiques">
+                <mat-icon>style</mat-icon>
+              HISTORIQUES
+            </a>
+            <a (click)="sidenav.toggle()" mat-list-item>
+              <mat-icon>close</mat-icon> Close
+            </a>
+          </mat-nav-list>
+        </mat-sidenav>
+        <!-- Début caroussel-->
+        <mdb-carousel [controls]="true" [indicators]="true" [dark]="true">
+          <mdb-carousel-item>
+            <img
+              src="../../../assets/images/commune_de_biscuiterie.png"
+              class="d-block w-100"
+              alt="..."
+              style="max-height:500px; margin:0 auto;"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img
+              src="../../../assets/images/maire.jpg"
+              class="d-block w-100"
+              alt="..."
+              style="max-height:500px; margin:0 auto;"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img
+              src="../../../assets/images/image1.jpg"
+              class="d-block w-100"
+              alt="..."
+              style="max-height:500px; margin:0 auto;"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </mdb-carousel-item>
+        </mdb-carousel>
+        <!-- Fin caroussel -->
+        <!-- <mat-sidenav-content fxFlexFill>Commune De Biscuiterie</mat-sidenav-content> -->
+      </mat-sidenav-container>
+    </div>
+  </div>
+  
+  
+  <div class="container text-center text-black">
+      
+    <h2>ACTUALITES</h2>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mx-auto"  *ngFor="let article of articles">      
+        <div class="card mb-3"  style="background-color: #1F758E; color: white; border: 2Px solid #1F758E; max-width: 18rem;">
+          <div class="card-header p-0"><img src="../../../assets/images/education.jfif" class="card-img-top image_actu"
+            alt="Hollywood Sign on The Hill" /></div>
+          <div class="card-body">
+            <p>{{article.mini_description}}</p>
+          </div>
+          <a class="btn" [routerLink]='["/actualites",article._id]'><div class=" bg-transparent">Lire la Suite</div></a>
+        </div>
+      </div>
+    </div>
+    
+    <nav aria-label="Page navigation example" style="background-color: #1F758E;">
+      <ul class="pagination justify-content-center" style="text-align: center;">
+        <li class="page-item"><a class="page-link" href="#">Précédent</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
+      </ul>
+    </nav>
+    
+  </div>
+  
+  <!-- Footer -->
+  <footer class="text-center text-black" style="background-color: #1F758E;">
+    <!-- Grid container -->
+    <div class="container p-4">
+    
+      <!-- Section: Form -->
+      <section class="">
+          <form action="">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-auto">
+                <p class="pt-2">
+                  <strong>Abonnez vous à notre newsletter</strong>
+                </p>
+              </div>
+              <!--Grid column-->
+    
+              <!--Grid column-->
+              <div class="col-md-5 col-12">
+                <!-- Email input -->
+                <mdb-form-control class="form-white mb-4">
+                  <input mdbInput type="email" id="form5Example24" class="form-control" />
+                  <label mdbLabel class="form-label" for="form5Example24">Email address</label>
+                </mdb-form-control>
+              </div>
+              <!--Grid column-->
+    
+              <!--Grid column-->
+              <div class="col-auto">
+                <!-- Submit button -->
+                <button mdbRipple type="submit" class="btn btn-outline-black mb-4">
+                  S'inscrire
+                </button>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+      </section>
+      <!-- Section: Form -->
+      
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Les 21 quartiers</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-black">Ouagou Niaye,Ouagou Niaye 1,Ouagou Niaye 2,Ouagou Niaye 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">Bopp,Cité Ndar,Niary Tally,Nguelaw,Cité Bissap</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">Béne Tally,Niary Tally,Nguelaw,Cité Bissap</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">Niary Tally,Nguelaw,Cité Bissap,Béne Tally,Bopp</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Numéro Utiles</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-black">Sous Prefecture : 33 820 64 92</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">Prefecture : 33 823 44 22</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">Sous Prefecture : 33 820 64 92</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">Prefecture : 33 823 44 22</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mt-4 mb-md-0">
+            <h5 class="text-uppercase">Histoires & Géographie de la commune</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+          repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+          eum harum corrupti dicta, aliquam sequi voluptate quas.
+            </p>
+            </ul>
+          </div>
+          <!--Grid column-->
+          
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+      
+      <!-- Section: Social media -->
+      
+      <!-- Section: Social media -->
+  
+      <!-- Section: Text -->
+      <!-- <section class="mb-4">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+          repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+          eum harum corrupti dicta, aliquam sequi voluptate quas.
+        </p>
+      </section> -->
+      <!-- Section: Text -->
+  
+      
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #83CCDD;">
+      <img src="../../../assets/images/logo_commune.jpg" alt="" srcset="" width="2%" height="auto">
+      Commune de Biscuiterie <br>
+      Niarry Tally, Avenue Cheikh Sidaty Aidara
+      
+      <section class="mt-3">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Horaires</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-black">Du Lundi au Vendredi</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">08h-17h</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+          
+          <!-- <div class="col-lg-2 col-md-6 mb-4 mb-md-0 vertical-align"></div> -->
+          
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Téléphone</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-black">+221 33 824 15 91</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">+221 77 838 00 81</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+          
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">E-mail</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-black">communnedebiscuiterie@gmail.com</a>
+              </li>
+              <li>
+                <a href="#!" class="text-black">cccommunnedebiscuiterie@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+          
+          <!-- <div class="col-lg-2 col-md-6 mb-4 mb-md-0 vertical-align"></div> -->
+          
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Réseaux Sociaux</h5>
+            
+            <!-- Facebook -->
+        <a mdbRipple class="btn btn-outline-black btn-floating m-1" href="https://www.facebook.com/Commune.De.Biscuiterie" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+  
+      <!-- Twitter -->
+      <a mdbRipple class="btn btn-outline-black btn-floating m-1" href="https://twitter.com/mbiscuiterie?s=11&t=8j3p9yOL4OoWjXUj9m3Kng" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+  
+      <!-- Instagram -->
+      <a mdbRipple class="btn btn-outline-black btn-floating m-1" href="https://instagram.com/commune_de_biscuiterie_sn?igshid=YmMyMTA2M2Y=" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+  
+      <!-- youtube -->
+      <a mdbRipple class="btn btn-outline-black btn-floating m-1" href="https://www.youtube.com/channel/UCxNxKeHl-uggiohj0rCQNng" role="button"
+        ><i class="fab fa-youtube"></i
+      ></a>
+            
+          </div>
+          <!--Grid column-->
+          
+        </div>
+        <!--Grid row-->
+      </section>
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+

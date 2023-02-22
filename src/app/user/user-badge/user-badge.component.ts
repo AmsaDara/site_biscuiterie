@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticateService } from '../authenticate/authenticate.service'
 @Component({
   selector: 'app-user-badge',
   templateUrl: './user-badge.component.html',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserBadgeComponent implements OnInit {
 
-  constructor() { }
+  @Input() userInfo:any;
+  constructor(
+    private authenticateService:AuthenticateService,
+    private route:Router) { }
 
   ngOnInit(): void {
+  }
+  
+  logout(){
+    this.authenticateService.logout();
+
   }
 
 }

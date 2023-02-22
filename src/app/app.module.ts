@@ -39,7 +39,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserModule } from './user/user.module';
-
+import { JwtInterceptor } from './user/authenticate/jwt.interceptors';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ByarticleComponent } from './layout/actualites/byarticle/byarticle.component';
+import { SecremunicipalComponent } from './layout/municipalite/secremunicipal/secremunicipal.component';
+import { CabinetmaireComponent } from './layout/municipalite/cabinetmaire/cabinetmaire.component';
+import { ListeconseilComponent } from './layout/municipalite/listeconseil/listeconseil.component';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +66,10 @@ import { UserModule } from './user/user.module';
     SansableComponent,
     TerrainComponent,
     ActualitesComponent,
+    ByarticleComponent,
+    SecremunicipalComponent,
+    CabinetmaireComponent,
+    ListeconseilComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -81,9 +91,12 @@ import { UserModule } from './user/user.module';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    UserModule
+    UserModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

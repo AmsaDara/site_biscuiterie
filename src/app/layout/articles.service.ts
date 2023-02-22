@@ -18,6 +18,10 @@ export class ArticleService {
   getFeaturedArticle():Observable<any>{
     return this.http.get('http://localhost:3000/featuredArticle') as Observable<IArticle[]>
   }
+  
+  getArticleById(id: string):Observable<any>{
+    return this.http.get(`${environment.BASE_API_URI}/${id}`)  as Observable<IArticle[]>
+  }
 
   // addMovie(movie:IMovie):Observable<IMovie>{
   //     return this.http.post(`${environment.BASE_API_URI}/movies`,movie) as Observable<IArticle>

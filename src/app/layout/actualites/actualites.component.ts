@@ -11,9 +11,29 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ActualitesComponent implements OnInit {
 
-  constructor() { }
+  articles?: any;
+  router: any;
 
-  ngOnInit(): void {
+  constructor(
+    private articleService: ArticleService,
+    private snackBar:MatSnackBar ) {
   }
+  
+  ngOnInit() {
+    this.articleService.getAllArticle().subscribe(data=>{
+      if(data.status==="error"){
+        this.snackBar.open(data.message,'x');
+        this.articles=[];
+      }else{
+        this.articles=data.payload}
+      }
+      )
+  }
+  
+  articleById(): void{
+    //this.articleService.getarticleById(this.articleId).subscribe()
+    this.router.navigate(['/articleBy_id/{{articles.id}}'])
+  }
+
 
 }

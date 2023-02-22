@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map, Observable, shareReplay } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { AuthenticateService } from '../../user/authenticate/authenticate.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  currentUser?: any;
+  subscription?:any;
 
-  ngOnInit(): void {
-  }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map((result:any) => result.matches),
+      map((result: any) => result.matches),
+      shareReplay()
+    );
+  
+    constructor(
+      private breakpointObserver: BreakpointObserver,
+      private authenticationService: AuthenticateService
+    ) { }
+  
+  
+    ngOnInit(): void {
+      this.subscription= this.authenticationService.currentUser$.subscribe({
+        next: (user) => {
+          this.currentUser = user
+        }
+      })
+    }
+    
+    ngOnDestroy(): void {
+      this.subscription.unsubscribe()
+    }
 
 }
